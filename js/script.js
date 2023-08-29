@@ -25,15 +25,16 @@ $(document).ready(function () {
       var countdownText = days + '天 ' + hours + '小时 ' + minutes + '分钟 ' + seconds + '秒';
       $('#countdown-content').text(countdownText);
       // $(".box").hide()
-      $(".box").show()
-      $("#countdown").hide()
-
-
-    } else {
       // $(".box").show()
+      $("#countdown").hide()
+    } else {
+      $(".box").show()
     }
   }
 
+  $(".girl").css("left","-100px")
+  $(".girl-b").css("right","-100px")
+  
   updateCountdown(); // 更新倒计时
 
   setInterval(updateCountdown, 1000);
@@ -60,9 +61,12 @@ $(document).ready(function () {
   $("#birthdayButton").click(function () {
     $(".content").show()
     $(".banner").add(".content").css("transform", "translate(0%, -100vh)")
+    $(".girl").css("top","670px")
+    $(".girl-b").css("bottom","-275px")
   });
   $("#BackButton").click(function () {
-    console.log("a")
+    $(".girl-b").css("bottom","-100px")
+    $(".girl").css("top","-30px")
     $(".banner").add(".content").css("transform", "translate(0%, 0vh)")
   });
 });
