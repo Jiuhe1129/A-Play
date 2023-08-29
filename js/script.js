@@ -24,17 +24,17 @@ $(document).ready(function () {
 
       var countdownText = days + '天 ' + hours + '小时 ' + minutes + '分钟 ' + seconds + '秒';
       $('#countdown-content').text(countdownText);
-      // $(".box").hide()
-      // $(".box").show()
+      $(".box").show()
       $("#countdown").hide()
     } else {
       $(".box").show()
+      $("#countdown").hide()
     }
   }
 
-  $(".girl").css("left","-100px")
-  $(".girl-b").css("right","-100px")
-  
+  $(".girl").css("left", "-100px")
+  $(".girl-b").css("right", "-100px")
+
   updateCountdown(); // 更新倒计时
 
   setInterval(updateCountdown, 1000);
@@ -42,11 +42,12 @@ $(document).ready(function () {
   if (month === '08' && day === '30') {
     $(".birthdays").text("今天是你的生日哦").addClass("fade-in");
     console.log("今天是8月30号");
+    $("button").hide()
+    $(".bz").hide();
   } else {
     $(".birthdays").text("今天不是你生日哦").addClass("fade-in");
     console.log("今天不是8月30号");
-    // $("button").hide()
-    // $(".bz").hide();
+
   }
 
   $(".content").hide()
@@ -61,12 +62,12 @@ $(document).ready(function () {
   $("#birthdayButton").click(function () {
     $(".content").show()
     $(".banner").add(".content").css("transform", "translate(0%, -100vh)")
-    $(".girl").css("top","670px")
-    $(".girl-b").css("bottom","-275px")
+    $(".girl").css("top", "670px")
+    $(".girl-b").css("bottom", "-275px")
   });
   $("#BackButton").click(function () {
-    $(".girl-b").css("bottom","-100px")
-    $(".girl").css("top","-30px")
+    $(".girl-b").css("bottom", "-100px")
+    $(".girl").css("top", "-30px")
     $(".banner").add(".content").css("transform", "translate(0%, 0vh)")
   });
 });
@@ -114,7 +115,7 @@ timeline.to('.candle-container', {
 });
 
 function birthday() {
-  var spanContents = ["9", "6", "9", "1", "5", "5", "3", "5"];
+  var spanContents = ["7", "5", "6", "3", "5", "0", "3", "5"];
 
   $(".zfbkl span").each(function (index) {
     $(this).text(spanContents[index]);
