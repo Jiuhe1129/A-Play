@@ -20,6 +20,10 @@ button[type="button"]{padding: 5px 10px;font-size: 30px; margin: 10px; border: 0
   height: 0;
 }
 
+.birthday{
+  display: flex;
+}
+
 .wrapper,
 .plate,
 .candle-container {
