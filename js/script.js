@@ -155,16 +155,6 @@ function birthday() {
   });
 }
 
-function scrControl(t){
-  if(t == 0){ //禁止滚动
-      document.body.addEventListener('touchmove', function (e) {
-            e.preventDefault();
-      }, { passive: false });  //passive 参数不能省略，用来兼容ios和android
-      }else if( t == 1){ //允许滚动
-      document.body.addEventListener('touchmove', function (e) {
-                e.returnValue = true;
-          }, {passive: false});
-  }
-}
-
-scrControl()
+$(window).on('touchmove', function(e) {
+  e.preventDefault();
+});
